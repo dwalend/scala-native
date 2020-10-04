@@ -135,7 +135,6 @@ abstract class Suite {
         if (testSuccess) (Status.Success, "  [ok] ", Console.GREEN)
         else (Status.Failure, "  [fail] ", Console.RED)
       val event = NativeEvent(className, test.name, NativeFingerprint, status)
-
       val outMsg = color + statusStr + test.name +
         getThrownString(thrown, color, statusStr.length) +
         Console.RESET

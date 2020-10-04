@@ -25,6 +25,7 @@ object stat {
                         time_t, // st_atime
                         time_t, // st_mtime
                         time_t, // st_ctime
+
                         blkcnt_t, // st_blocks
                         blksize_t, // st_blksize
                         nlink_t, // st_nlink

@@ -128,6 +128,7 @@ private[net] class PlainSocketImpl extends SocketImpl {
 
       val pollRes = poll(pollFdPtr, nAlloc.toUInt, timeout)
 
+
       pollRes match {
         case err if err < 0 =>
           throw new SocketException(

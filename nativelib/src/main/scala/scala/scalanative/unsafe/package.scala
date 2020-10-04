@@ -10,10 +10,10 @@ import scalanative.runtime.Intrinsics.{castIntToRawPtr, castLongToRawPtr}
 package object unsafe {
 
   /** Int on 32-bit architectures and Long on 64-bit ones. */
-  type Word = Long
+  type Word = Int
 
   /** UInt on 32-bit architectures and ULong on 64-bit ones. */
-  type UWord = ULong
+  type UWord = UInt
 
   /** The C 'char' type. */
   type CChar = Byte
@@ -31,7 +31,7 @@ package object unsafe {
   type CUnsignedLong = UWord
 
   /** The C 'unsigned long int' type. */
-  type CUnsignedLongInt = ULong
+  type CUnsignedLongInt = UInt
 
   /** The C 'unsigned long long' type. */
   type CUnsignedLongLong = ULong
@@ -49,7 +49,7 @@ package object unsafe {
   type CLong = Word
 
   /** The C 'long int' type. */
-  type CLongInt = Long
+  type CLongInt = Int
 
   /** The C 'long long' type. */
   type CLongLong = Long

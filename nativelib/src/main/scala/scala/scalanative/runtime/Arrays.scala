@@ -126,6 +126,7 @@ object Array {
       val leftPtr  = left.atRaw(leftPos)
       val rightPtr = right.atRaw(rightPos)
       libc.memcmp(leftPtr, rightPtr, len * left.stride)
+//      `llvm.memmove.p0i8.p0i8.i32`(toPtr, fromPtr, size, 1, false)
     }
   }
 }
