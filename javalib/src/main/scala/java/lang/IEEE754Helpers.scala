@@ -73,10 +73,10 @@ private[java] object IEEE754Helpers {
         val nSeen = !end - cStr
 
         // magic: is first char one of D d F f
-        var idx = if ((cStr(nSeen) & 0xdd) == 0x44) (nSeen + 1) else nSeen
+        var idx: CPtrDiff = if ((cStr(nSeen.toInt) & 0xdd) == 0x44) (nSeen + 1) else nSeen //DFW added a toInt for 32-bit
 
         while (idx < bytesLen) { // Check for garbage in the unparsed remnant.
-          val b = cStr(idx)
+          val b = cStr(idx.toInt) //DFW added a toInt for 32-bit
           if ((b < 0) || b > 0x20) {
             throw new NumberFormatException(exceptionMsg(s))
           }
