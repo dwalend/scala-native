@@ -42,7 +42,9 @@ struct libgcc_object_info {
 
 // static linker symbols to prevent wrong two level namespace for _Unwind symbols
 #if defined(__arm__)
-   #define NOT_HERE_BEFORE_5_0(sym)     \
+  #define NOT_HERE_BEFORE_10_6(sym)
+  #define NEVER_HERE(sym)
+  #define NOT_HERE_BEFORE_5_0(sym)     \
        extern const char sym##_tmp30 __asm("$ld$hide$os3.0$_" #sym ); \
        __attribute__((visibility("default"))) const char sym##_tmp30 = 0; \
        extern const char sym##_tmp31 __asm("$ld$hide$os3.1$_" #sym ); \
